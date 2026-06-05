@@ -1,20 +1,24 @@
-# Terraform Block
 terraform {
-  required_version = ">= 1.4" 
+  required_version = ">= 1.4"
+
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
+    nebius = {
+      source  = "nebius/nebius"
+      version = ">= 0.6.8"
+    }
+    tls = {
+      source  = "hashicorp/tls"
       version = "~> 4.0"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 }
 
-# Provider Block
-provider "aws" {
-  region  = var.aws_region
-  profile = "default"
+# Uses the default Nebius CLI profile (~/.nebius/config.yaml) or NEBIUS_IAM_TOKEN.
+# Run `nebius profile create` once before `terraform apply`.
+provider "nebius" {
+  domain = var.region
 }
-/*
-Note-1:  AWS Credentials Profile (profile = "default") configured on your local desktop terminal  
-$HOME/.aws/credentials
-*/
