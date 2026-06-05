@@ -23,3 +23,7 @@ python -m pip install -r requirements.txt
 Use a fresh virtualenv for this repo. Reusing an older environment with extra packages can create version conflicts with the pinned dependencies.
 
 See the `README.md` inside each subfolder for task details, requirements, and expected outputs.
+
+## GPU VM on Nebius (optional)
+
+To provision an L40S GPU VM for HW1/HW2, see [`terraform-manifests/README.md`](terraform-manifests/README.md).

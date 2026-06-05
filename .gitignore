@@ -3,3 +3,9 @@ __pycache__/
 *.py[cod]
 hw1/results/
 hw2/results/
+terraform-manifests/.terraform/
+terraform-manifests/terraform.tfstate
+terraform-manifests/terraform.tfstate.backup
+terraform-manifests/terraform.tfvars
+terraform-manifests/*-key.pem
+terraform-manifests/*-key.pub
